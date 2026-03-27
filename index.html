@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AgriSense Dashboard - Tiered Data Processing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="header">
+        <div class="brand">
+          <span class="brand-icon">🌾</span>
+          <div>
+            <h1>AgriSense Dashboard</h1>
+            <p>Tiered Data Processing — Smart Agriculture</p>
+          </div>
+        </div>
+        <div class="tabs">
+          <button class="tab active" data-tab="overview">Overview</button>
+          <button class="tab" data-tab="sensors">Sensors</button>
+          <button class="tab" data-tab="architecture">Architecture</button>
+          <button class="tab" data-tab="alerts">Alerts <span class="badge" id="alertCount">2</span></button>
+        </div>
+      </header>
+
+      <section class="stats-grid">
+        <article class="card" id="soilCard">
+          <p>SOIL MOISTURE</p>
+          <h2><span id="soilValue">--</span>%</h2>
+          <p id="soilStatus" class="status">Loading...</p>
+        </article>
+
+        <article class="card" id="tempCard">
+          <p>TEMPERATURE</p>
+          <h2><span id="tempValue">--</span>°C</h2>
+          <p id="tempStatus" class="status">Loading...</p>
+        </article>
+
+        <article class="card" id="humidityCard">
+          <p>HUMIDITY</p>
+          <h2><span id="humidityValue">--</span>%</h2>
+          <p id="humidityStatus" class="status">Loading...</p>
+        </article>
+
+        <article class="card" id="lightCard">
+          <p>LIGHT (LUX)</p>
+          <h2><span id="lightValue">--</span></h2>
+          <p id="lightStatus" class="status">Loading...</p>
+        </article>
+      </section>
+
+      <section class="section card chart-section">
+        <div class="section-title">Soil Moisture — Last 12 hours</div>
+        <div class="line-chart" id="moistureChart" aria-label="Soil moisture chart"></div>
+      </section>
+
+      <section class="section field-zones">
+        <div class="section-title">Field Zones</div>
+        <div class="zone-grid">
+          <article class="zone-card">
+            <h3>Zone A — North Field</h3>
+            <p><span id="zoneAValue">--</span>% moisture</p>
+            <div class="progress"><div class="progress-inner" id="zoneAProgress"></div></div>
+          </article>
+
+          <article class="zone-card">
+            <h3>Zone B — South Field</h3>
+            <p><span id="zoneBValue">--</span>% moisture</p>
+            <div class="progress"><div class="progress-inner" id="zoneBProgress"></div></div>
+          </article>
+
+          <article class="zone-card">
+            <h3>Zone C — Greenhouse</h3>
+            <p><span id="zoneCValue">--</span>% moisture</p>
+            <div class="progress"><div class="progress-inner" id="zoneCProgress"></div></div>
+          </article>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <span>Localhost Demo | IoT + Arduino data will be integrated via REST API (simulated in JS)</span>
+      </footer>
+    </main>
+
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>
