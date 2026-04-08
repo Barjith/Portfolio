@@ -25,6 +25,10 @@
           <button class="tab" data-tab="architecture">Architecture</button>
           <button class="tab" data-tab="alerts">Alerts <span class="badge" id="alertCount">2</span></button>
         </div>
+        <div class="conn-status" id="connStatus">
+          <span class="conn-dot" id="connDot"></span>
+          <span id="connLabel">Connecting...</span>
+        </div>
       </header>
 
       <section class="stats-grid">
@@ -82,7 +86,7 @@
       </section>
 
       <footer class="footer">
-        <span>Localhost Demo | IoT + Arduino data will be integrated via REST API (simulated in JS)</span>
+        <span>Real-time sensor data via <code>GET http://localhost:5000/api/sensors</code> — falls back to simulation if unavailable</span>
       </footer>
     </main>
 

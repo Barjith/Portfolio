@@ -197,11 +197,50 @@ body {
   transition: width 0.4s ease;
 }
 
+.conn-status {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+.conn-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--muted);
+  flex-shrink: 0;
+}
+
+.conn-dot.live {
+  background: var(--success);
+  box-shadow: 0 0 6px var(--success);
+  animation: pulse 1.8s infinite;
+}
+
+.conn-dot.sim {
+  background: var(--warn);
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
 .footer {
   margin-top: 6px;
   font-size: 0.85rem;
   color: var(--muted);
   text-align: center;
+}
+
+.footer code {
+  background: rgba(148,163,184,0.12);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 0.8rem;
 }
 
 @media (max-width: 1024px) {
