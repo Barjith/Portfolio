@@ -22,7 +22,6 @@
         <div class="tabs">
           <button class="tab active" data-tab="overview">Overview</button>
           <button class="tab" data-tab="sensors">Sensors</button>
-          <button class="tab" data-tab="architecture">Architecture</button>
           <button class="tab" data-tab="alerts">Alerts <span class="badge" id="alertCount">2</span></button>
         </div>
         <div class="conn-status" id="connStatus">
@@ -37,24 +36,19 @@
           <h2><span id="soilValue">--</span>%</h2>
           <p id="soilStatus" class="status">Loading...</p>
         </article>
+      </section>
 
-        <article class="card" id="tempCard">
-          <p>TEMPERATURE</p>
-          <h2><span id="tempValue">--</span>°C</h2>
-          <p id="tempStatus" class="status">Loading...</p>
-        </article>
+      <div id="alertPanel" class="alert-banner" style="display:none;">
+        <span id="alertMsg"></span>
+      </div>
 
-        <article class="card" id="humidityCard">
-          <p>HUMIDITY</p>
-          <h2><span id="humidityValue">--</span>%</h2>
-          <p id="humidityStatus" class="status">Loading...</p>
-        </article>
-
-        <article class="card" id="lightCard">
-          <p>LIGHT (LUX)</p>
-          <h2><span id="lightValue">--</span></h2>
-          <p id="lightStatus" class="status">Loading...</p>
-        </article>
+      <section class="section card" id="sensorsPanel" style="display:none; margin-bottom:14px;">        <div class="section-title">Sensors</div>
+        <div class="sensor-detail">
+          <p class="sensor-label">SOIL MOISTURE</p>
+          <h2 class="sensor-big"><span id="soilValue2">--</span>%</h2>
+          <p id="soilStatus2" class="status">Loading...</p>
+          <p class="sensor-desc">Measures the water content in the soil. Optimal range: 34% – 85%.</p>
+        </div>
       </section>
 
       <section class="section card chart-section">

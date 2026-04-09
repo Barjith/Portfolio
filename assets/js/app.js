@@ -31,26 +31,19 @@ const setConnStatus = (mode) => {
 
 // ── Display ───────────────────────────────────────────────────────────────────
 const updateDisplay = (data) => {
-  const soil     = makeStatus(data.soil,     60, 85,    34,   '%');
-  const temp     = makeStatus(data.temp,     26, 35,    10,   '°C');
-  const humidity = makeStatus(data.humidity, 60, 78,    30,   '%');
-  const light    = makeStatus(data.light,  5000, 12000, 1000, ' lx');
+  const soil = makeStatus(data.soil, 60, 85, 34, '%');
 
-  document.getElementById('soilValue').textContent     = data.soil;
-  document.getElementById('tempValue').textContent     = data.temp;
-  document.getElementById('humidityValue').textContent = data.humidity;
-  document.getElementById('lightValue').textContent    = data.light;
+  document.getElementById('soilValue').textContent = data.soil;
 
-  [
-    { id: 'soilStatus',     s: soil },
-    { id: 'tempStatus',     s: temp },
-    { id: 'humidityStatus', s: humidity },
-    { id: 'lightStatus',    s: light },
-  ].forEach(({ id, s }) => {
-    const el = document.getElementById(id);
-    el.className = `status ${s.cls}`;
-    el.textContent = s.text;
-  });
+  const el = document.getElementById('soilStatus');
+  el.className = `status ${soil.cls}`;
+  el.textContent = soil.text;
+
+  // Sync sensors panel
+  document.getElementById('soilValue2').textContent = data.soil;
+  const el2 = document.getElementById('soilStatus2');
+  el2.className = `status ${soil.cls}`;
+  el2.textContent = soil.text;
 
   [
     { idVal: 'zoneAValue', idProg: 'zoneAProgress', value: data.zones.a },
@@ -72,8 +65,18 @@ const updateDisplay = (data) => {
   });
 
   // Alert badge
-  const alertCount = [soil, temp, humidity, light].filter((f) => f.cls === 'alert').length;
+  const alertCount = [soil].filter((f) => f.cls === 'alert').length;
   document.getElementById('alertCount').textContent = alertCount;
+
+  // Soil > 80% alert
+  const alertPanel = document.getElementById('alertPanel');
+  const alertMsg   = document.getElementById('alertMsg');
+  if (data.soil > 80) {
+    alertMsg.textContent = `⚠️ Soil moisture is ${data.soil}% — above 80%. Risk of waterlogging.`;
+    alertPanel.style.display = 'block';
+  } else {
+    alertPanel.style.display = 'none';
+  }
 };
 
 // ── Simulation fallback ───────────────────────────────────────────────────────
@@ -148,5 +151,8 @@ document.querySelectorAll('.tab').forEach((btn) => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.tab').forEach((t) => t.classList.remove('active'));
     btn.classList.add('active');
+
+    const tab = btn.dataset.tab;
+    document.getElementById('sensorsPanel').style.display = tab === 'sensors' ? 'block' : 'none';
   });
 });
