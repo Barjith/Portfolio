@@ -1,26 +1,27 @@
-// AgriSense — Soil Moisture Only
-// Arduino UNO R4 WiFi
-// Soil moisture sensor signal → A0
+int soilPin = A0;
+int tempPin = A1;
 
-#define SOIL_PIN A0
+int soilValue;
+float temperature;
 
-void setup() {
+void setup()
+{
   Serial.begin(9600);
-  delay(1000);
 }
 
-void loop() {
-  int soilRaw = analogRead(SOIL_PIN);
+void loop()
+{
+  soilValue = analogRead(soilPin);
 
-  // Map: 1023 = dry (0%), ~300 = wet (100%)
-  int soil = map(soilRaw, 1023, 300, 0, 100);
-  soil     = constrain(soil, 0, 100);
+  int tempValue = analogRead(tempPin);
 
-  // Send JSON
-  Serial.print("{\"soil\":");
-  Serial.print(soil);
-  Serial.print(",\"temp\":0,\"humidity\":0,\"light\":0}");
-  Serial.print("\r\n");
+  temperature = tempValue * 0.488;
 
-  delay(2000);
+  Serial.print("Soil Moisture: ");
+  Serial.print(soilValue);
+
+  Serial.print("  Temperature: ");
+  Serial.println(temperature);
+
+  delay(1000);
 }
