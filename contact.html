@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact Barjith A I — B.Tech CSE student. Send a message or find me on GitHub and LinkedIn." />
+  <meta name="author" content="Barjith A I" />
+  <title>Contact — Barjith A I</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="Barjith A I — Home">BAI</a>
+      <nav aria-label="Primary navigation" id="nav">
+        <ul role="list" id="navList">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+      <div style="display:flex;gap:0.5rem;align-items:center;">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">🌙</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+
+    <section class="section" aria-labelledby="contact-heading">
+      <div class="container">
+        <div style="margin-bottom:3rem;">
+          <span class="section-label">Say hello</span>
+          <h1 id="contact-heading">Get in Touch</h1>
+        </div>
+
+        <div class="contact-layout">
+
+          <div class="contact-info">
+            <p>Have a project in mind, want to collaborate, or just want to say hi? Fill out the form and I'll get back to you as soon as possible.</p>
+
+            <div class="contact-links" role="list" aria-label="Contact links">
+              <a href="mailto:barjitha@karunya.edu.in" class="contact-link" role="listitem" aria-label="Send email to barjitha@karunya.edu.in">
+                <div class="contact-link-icon" aria-hidden="true">✉️</div>
+                <div class="contact-link-text">
+                  <span class="contact-link-label">Email</span>
+                  <span class="contact-link-value">barjitha@karunya.edu.in</span>
+                </div>
+              </a>
+              <a href="https://github.com/Barjith" target="_blank" rel="noopener noreferrer" class="contact-link" role="listitem" aria-label="GitHub profile (opens in new tab)">
+                <div class="contact-link-icon" aria-hidden="true">🐙</div>
+                <div class="contact-link-text">
+                  <span class="contact-link-label">GitHub</span>
+                  <span class="contact-link-value">github.com/Barjith</span>
+                </div>
+              </a>
+              <a href="https://www.linkedin.com/in/barjithai" target="_blank" rel="noopener noreferrer" class="contact-link" role="listitem" aria-label="LinkedIn profile (opens in new tab)">
+                <div class="contact-link-icon" aria-hidden="true">💼</div>
+                <div class="contact-link-text">
+                  <span class="contact-link-label">LinkedIn</span>
+                  <span class="contact-link-value">linkedin.com/in/barjithai</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="form-card">
+            <h2>Send a Message</h2>
+            <form id="contactForm" novalidate aria-labelledby="form-heading">
+              <span id="form-heading" class="visually-hidden">Contact form</span>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Full Name <span aria-hidden="true">*</span></label>
+                  <input type="text" id="name" name="name" autocomplete="name" required aria-required="true" aria-describedby="name-error" placeholder="Your full name" />
+                  <span id="name-error" class="field-error" role="alert" aria-live="polite"></span>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address <span aria-hidden="true">*</span></label>
+                  <input type="email" id="email" name="email" autocomplete="email" required aria-required="true" aria-describedby="email-error" placeholder="your@email.com" />
+                  <span id="email-error" class="field-error" role="alert" aria-live="polite"></span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject <span aria-hidden="true">*</span></label>
+                <input type="text" id="subject" name="subject" required aria-required="true" aria-describedby="subject-error" placeholder="What's this about?" />
+                <span id="subject-error" class="field-error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message <span aria-hidden="true">*</span></label>
+                <textarea id="message" name="message" rows="5" required aria-required="true" aria-describedby="message-error" placeholder="Tell me about your project or idea..."></textarea>
+                <span id="message-error" class="field-error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <button type="submit" class="btn" style="width:100%;justify-content:center;" aria-label="Send your message">Send Message →</button>
+
+              <div id="form-success" class="form-success" role="status" aria-live="polite" hidden>
+                ✅ Message sent! I'll get back to you soon.
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" aria-label="Barjith A I Home">BAI</a>
+        <p>B.Tech CSE · Karunya Institute</p>
+      </div>
+      <div class="footer-center">
+        <p>&copy; <span id="year"></span> Barjith A I. All rights reserved.</p>
+      </div>
+      <nav aria-label="Footer navigation">
+        <ul role="list">
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>

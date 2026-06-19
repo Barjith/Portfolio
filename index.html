@@ -1,89 +1,183 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AgriSense Dashboard - Tiered Data Processing</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/styles.css" />
-  </head>
-  <body>
-    <main class="app-shell">
-      <header class="header">
-        <div class="brand">
-          <span class="brand-icon">🌾</span>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Barjith A I — B.Tech CSE student skilled in Python, JavaScript, IoT, and Full Stack Web Development." />
+  <meta name="keywords" content="Barjith, portfolio, full stack developer, Python, JavaScript, IoT, Arduino" />
+  <meta name="author" content="Barjith A I" />
+  <meta property="og:title" content="Barjith A I — Developer Portfolio" />
+  <meta property="og:description" content="Personal portfolio of Barjith A I, B.Tech CSE student and Full Stack Developer." />
+  <meta property="og:type" content="website" />
+  <title>Barjith A I — Developer Portfolio</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="Barjith A I — Home">BAI</a>
+      <nav aria-label="Primary navigation" id="nav">
+        <ul role="list" id="navList">
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div style="display:flex;gap:0.5rem;align-items:center;">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">🌙</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <span class="hero-tag">👋 Available for opportunities</span>
+            <h1 id="hero-heading">
+              Hi, I'm <span class="highlight">Barjith A I</span>
+            </h1>
+            <p class="hero-sub">B.Tech CSE Student at Karunya Institute. I build fast, accessible, and user-friendly web experiences using Python, JavaScript, and IoT technologies.</p>
+            <div class="hero-cta">
+              <a href="projects.html" class="btn" aria-label="View my projects">View Projects</a>
+              <a href="contact.html" class="btn btn-outline" aria-label="Get in touch with me">Get in Touch</a>
+            </div>
+            <div class="hero-stats" role="list" aria-label="Quick stats">
+              <div class="stat" role="listitem">
+                <span class="stat-num">2+</span>
+                <span class="stat-label">Projects</span>
+              </div>
+              <div class="stat" role="listitem">
+                <span class="stat-num">6+</span>
+                <span class="stat-label">Languages</span>
+              </div>
+              <div class="stat" role="listitem">
+                <span class="stat-num">3</span>
+                <span class="stat-label">Certifications</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-avatar" aria-hidden="true">👨‍💻</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section bg-alt" aria-labelledby="skills-heading">
+      <div class="container">
+        <div class="section-header">
           <div>
-            <h1>AgriSense Dashboard</h1>
-            <p>Tiered Data Processing — Smart Agriculture</p>
+            <span class="section-label">What I know</span>
+            <h2 id="skills-heading">Skills &amp; Technologies</h2>
           </div>
         </div>
-        <div class="tabs">
-          <button class="tab active" data-tab="overview">Overview</button>
-          <button class="tab" data-tab="sensors">Sensors</button>
-          <button class="tab" data-tab="alerts">Alerts <span class="badge" id="alertCount">2</span></button>
+        <div class="skills-container">
+          <div class="skill-group">
+            <div class="skill-group-title"><span class="icon">🌐</span> Languages</div>
+            <ul class="skills-list" aria-label="Programming languages">
+              <li class="skill-tag">HTML</li>
+              <li class="skill-tag">CSS</li>
+              <li class="skill-tag">JavaScript</li>
+              <li class="skill-tag">Python</li>
+              <li class="skill-tag">C</li>
+              <li class="skill-tag">C++</li>
+              <li class="skill-tag">MySQL</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-title"><span class="icon">⚙️</span> Frameworks &amp; Tools</div>
+            <ul class="skills-list" aria-label="Frameworks and tools">
+              <li class="skill-tag">Flask</li>
+              <li class="skill-tag">Node.js</li>
+              <li class="skill-tag">PostgreSQL</li>
+              <li class="skill-tag">Git</li>
+              <li class="skill-tag">GitHub</li>
+              <li class="skill-tag">Arduino</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-title"><span class="icon">💼</span> Computer Skills</div>
+            <ul class="skills-list" aria-label="Computer skills">
+              <li class="skill-tag">Microsoft Excel</li>
+              <li class="skill-tag">Access</li>
+              <li class="skill-tag">PowerPoint</li>
+              <li class="skill-tag">Visual Basic</li>
+              <li class="skill-tag">SQL</li>
+              <li class="skill-tag">SAS</li>
+            </ul>
+          </div>
         </div>
-        <div class="conn-status" id="connStatus">
-          <span class="conn-dot" id="connDot"></span>
-          <span id="connLabel">Connecting...</span>
-        </div>
-      </header>
-
-      <section class="stats-grid">
-        <article class="card" id="soilCard">
-          <p>SOIL MOISTURE</p>
-          <h2><span id="soilValue">--</span>%</h2>
-          <p id="soilStatus" class="status">Loading...</p>
-        </article>
-      </section>
-
-      <div id="alertPanel" class="alert-banner" style="display:none;">
-        <span id="alertMsg"></span>
       </div>
+    </section>
 
-      <section class="section card" id="sensorsPanel" style="display:none; margin-bottom:14px;">        <div class="section-title">Sensors</div>
-        <div class="sensor-detail">
-          <p class="sensor-label">SOIL MOISTURE</p>
-          <h2 class="sensor-big"><span id="soilValue2">--</span>%</h2>
-          <p id="soilStatus2" class="status">Loading...</p>
-          <p class="sensor-desc">Measures the water content in the soil. Optimal range: 34% – 85%.</p>
+    <!-- Featured Projects -->
+    <section class="section" aria-labelledby="featured-heading">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="section-label">What I've built</span>
+            <h2 id="featured-heading">Featured Projects</h2>
+          </div>
+          <a href="projects.html" class="btn btn-ghost btn-sm">View All →</a>
         </div>
-      </section>
-
-      <section class="section card chart-section">
-        <div class="section-title">Soil Moisture — Last 12 hours</div>
-        <div class="line-chart" id="moistureChart" aria-label="Soil moisture chart"></div>
-      </section>
-
-      <section class="section field-zones">
-        <div class="section-title">Field Zones</div>
-        <div class="zone-grid">
-          <article class="zone-card">
-            <h3>Zone A — North Field</h3>
-            <p><span id="zoneAValue">--</span>% moisture</p>
-            <div class="progress"><div class="progress-inner" id="zoneAProgress"></div></div>
+        <div class="card-grid">
+          <article class="card" aria-labelledby="proj1-title">
+            <div class="card-icon" aria-hidden="true">🌾</div>
+            <h3 id="proj1-title">AgriSense Dashboard</h3>
+            <p>Real-time IoT soil moisture monitoring dashboard. Arduino reads a soil sensor over USB, Node.js bridges the data to a live web dashboard with alerts when moisture exceeds 80%.</p>
+            <ul class="tags" aria-label="Technologies used">
+              <li>Arduino</li><li>Node.js</li><li>HTML/CSS/JS</li><li>IoT</li>
+            </ul>
+            <div class="card-footer">
+              <a href="projects.html" class="btn btn-sm" aria-label="View AgriSense project details">Details</a>
+              <a href="https://github.com/Barjith" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm" aria-label="View on GitHub (opens in new tab)">GitHub ↗</a>
+            </div>
           </article>
-
-          <article class="zone-card">
-            <h3>Zone B — South Field</h3>
-            <p><span id="zoneBValue">--</span>% moisture</p>
-            <div class="progress"><div class="progress-inner" id="zoneBProgress"></div></div>
-          </article>
-
-          <article class="zone-card">
-            <h3>Zone C — Greenhouse</h3>
-            <p><span id="zoneCValue">--</span>% moisture</p>
-            <div class="progress"><div class="progress-inner" id="zoneCProgress"></div></div>
+          <article class="card" aria-labelledby="proj2-title">
+            <div class="card-icon" aria-hidden="true">🍔</div>
+            <h3 id="proj2-title">Foody Buddy</h3>
+            <p>Canteen ordering system backend with Flask and PostgreSQL. Students browse menus, place orders, make payments, and receive WhatsApp notifications. Includes admin panel.</p>
+            <ul class="tags" aria-label="Technologies used">
+              <li>Flask</li><li>PostgreSQL</li><li>Python</li>
+            </ul>
+            <div class="card-footer">
+              <a href="projects.html" class="btn btn-sm" aria-label="View Foody Buddy project details">Details</a>
+              <a href="https://github.com/Barjith" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm" aria-label="View on GitHub (opens in new tab)">GitHub ↗</a>
+            </div>
           </article>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <footer class="footer">
-        <span>Real-time sensor data via <code>GET http://localhost:5000/api/sensors</code> — falls back to simulation if unavailable</span>
-      </footer>
-    </main>
+  </main>
 
-    <script src="assets/js/app.js"></script>
-  </body>
+  <footer role="contentinfo">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" aria-label="Barjith A I Home">BAI</a>
+        <p>B.Tech CSE · Karunya Institute</p>
+      </div>
+      <div class="footer-center">
+        <p>&copy; <span id="year"></span> Barjith A I. All rights reserved.</p>
+      </div>
+      <nav aria-label="Footer navigation">
+        <ul role="list">
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/main.js"></script>
+</body>
 </html>
